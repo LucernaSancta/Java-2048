@@ -79,5 +79,28 @@ public class Board {
         grid[choice[0]][choice[1]] = randomNumber;
     }
 
+    public void gravity_compress() {
+        for (int collumn = 0; collumn < 4; collumn++) {
+            int[] m = {0,0,0,0};
+            for (int y = 0, i = 0; y < 4; y++) {
+                if (grid[y][collumn] != 0) {
+                    m[i] = grid[y][collumn];
+                    i++;
+                }
+            }
+            grid[0][collumn] = m [0];
+            grid[1][collumn] = m [1];
+            grid[2][collumn] = m [2];
+            grid[3][collumn] = m [3];
+
+        }
+    }
+
+    public void gsg() {
+        gravity_compress();
+        summer();
+        gravity_compress();
+    }
+
 
 }
