@@ -14,7 +14,15 @@ public class Board {
 
     // rotate matrix 90 deg to the right
     public void rot90r() {
-        grid = rotateCW(grid);
+        final int M = grid.length;
+        final int N = grid[0].length;
+        int[][] ret = new int[N][M];
+        for (int r = 0; r < M; r++) {
+            for (int c = 0; c < N; c++) {
+                ret[c][M-1-r] = grid[r][c];
+            }
+        }
+        grid = ret;
     }
 
     // rotate matrix 90 deg to the left (270 to the right)

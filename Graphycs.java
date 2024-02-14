@@ -1,11 +1,14 @@
 import java.awt.*;
 
 public class Graphycs {
-    public void Graphycs() {
-        
-        Frame display = new Frame();
+    static Frame display;
+
+    public Graphycs() {
+
+        display = new Frame();
 
         display.setVisible(true);
         display.setSize(800, 800);
+        display.setBackground(Color.decode("12299680"));
     }
 }
