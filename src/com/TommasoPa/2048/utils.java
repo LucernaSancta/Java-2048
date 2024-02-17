@@ -50,4 +50,24 @@ public final class utils {
         }
         System.out.print("]\n");
     }
+
+    static void game_end(Board game) {
+        game.print_grid();
+
+        int max_tile = 0;
+        for (int x = 0; x < 4; x++) {
+            for (int y = 0; y < 4; y++) {
+                if (game.grid[x][y] > max_tile) {
+                    max_tile = game.grid[x][y];
+                }
+            }
+        }
+
+        System.out.println();
+        System.out.println("Max tile: " + Integer.toString(max_tile));
+        System.out.println("Score: " + Integer.toString(game.score));
+        System.out.println("Game over");
+
+        System.exit(0);
+    }
 }
