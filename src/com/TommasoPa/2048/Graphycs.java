@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Graphycs extends Frame {
     Font font = new Font("FreeSansBold", Font.PLAIN, 32);
-    int[][] paint_grid;
+    int[][] paint_grid = new int[4][4];
 
     public Graphycs() {
         setVisible(true);
@@ -18,7 +18,6 @@ public class Graphycs extends Frame {
             for (int y = 0; y < 4; y++) {
                 if (grid[x][y] > max_tile) {
                     max_tile = grid[x][y];
-                    System.out.println(max_tile);
                 }
             }
         }

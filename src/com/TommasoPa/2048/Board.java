@@ -7,34 +7,41 @@ public class Board {
 
     // construct the board
     public Board() {
-        grid = new int[][]{{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+        grid = new int[4][4];
         score = 0;
     }
 
     // rotate matrix 90 deg to the right (totaly copyed)
     public void rot90r() {
-        final int M = grid.length;
-        final int N = grid[0].length;
-        int[][] ret = new int[N][M];
-        for (int r = 0; r < M; r++) {
-            for (int c = 0; c < N; c++) {
-                ret[c][M-1-r] = grid[r][c];
+        int[][] ret = new int[4][4];
+        for (int r = 0; r < 4; r++) {
+            for (int c = 0; c < 4; c++) {
+                ret[c][3-r] = grid[r][c];
             }
         }
         grid = ret;
     }
 
-    // rotate matrix 90 deg to the left (270 to the right)
+    // rotate matrix 90 deg to the left
     public void rot90l() {
-        rot90l();
-        rot90l();
-        rot90l();
+        int[][] ret = new int[4][4];
+        for (int r = 0; r < 4; r++) {
+            for (int c = 0; c < 4; c++) {
+                ret[3-c][r] = grid[r][c];
+            }
+        }
+        grid = ret;
     }
 
     // rotate matrix 180 deg
     public void rot180() {
-        rot90l();
-        rot90l();
+        int[][] ret = new int[4][4];
+        for (int r = 0; r < 4; r++) {
+            for (int c = 0; c < 4; c++) {
+                ret[3-r][3-c] = grid[r][c];
+            }
+        }
+        grid = ret;
     }
 
     // sum each column of the matrix with the 2048 rules
