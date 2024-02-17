@@ -3,6 +3,6 @@ public class Main {
         Board game = new Board();
 
         // to do: graphycs
-        // Graphycs display = new Graphycs();
+        Graphycs display = new Graphycs();
     }
 }

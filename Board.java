@@ -12,7 +12,7 @@ public class Board {
         score = 0;
     }
 
-    // rotate matrix 90 deg to the right
+    // rotate matrix 90 deg to the right (totaly copyed)
     public void rot90r() {
         final int M = grid.length;
         final int N = grid[0].length;
