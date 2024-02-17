@@ -76,21 +76,22 @@ public class Board {
         int[] numbers = {2,2,2,2,2,2,2,2,2,4};
         int randomNumber = numbers[rand.nextInt(numbers.length)];
 
-        int[][] disp = {{0,0},{0,1},{0,2},{0,3},
-                        {1,0},{1,1},{1,2},{1,3},
-                        {2,0},{2,1},{2,2},{2,3},
-                        {3,0},{3,1},{3,2},{3,3},};
+        int[][] disp = new int[16][2];
+        int j = 0;
+
         for (int x = 0; x < 4; x++) {
             for (int y = 0; y < 4; y++) {
-                if (grid[x][y] != 0) {
+                
+                if (grid[x][y] == 0) {
+                    
                     int[] value = {x,y};
-                    disp = utils.remove(disp, value);
+                    disp[j] = value;
+                    j++;
                 }
             }
         }
 
-        int[] choice = disp[rand.nextInt(disp.length)];
-        utils.print_array(choice);
+        int[] choice = disp[rand.nextInt(j)];
         grid[choice[0]][choice[1]] = randomNumber;
     }
 

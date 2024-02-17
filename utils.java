@@ -19,33 +19,7 @@ public final class utils {
             default:    return new String[]{"00","ff"};
         }
     }
-
-    // append to a 2d array a new element
-    static int[][] append(int[][] array, int[] newElement) {
-        int[][] newArray = new int[array.length + 1][2];
-
-        int i;
-        for (i = 0; i < array.length; i++) {
-            newArray[i] = array[i];
-        }
-        newArray[i] = newElement;
-        return newArray;
-    }
-
-    // remove from a 2d array a element
-    static int[][] remove(int[][] array, int[] badApple) {
-
-        int[][] newArray = {};
-
-        for (int i = 0; i < array.length; i++) {
-            if (!(array[i][0] == badApple[0] && array[i][1] == badApple[1])) {
-                newArray = utils.append(newArray, array[i]);
-            }
-        }
-
-        return newArray;
-    }
-
+    
     // print 2d array
     static void print_array(int[][] array) {
         System.out.print("[");
