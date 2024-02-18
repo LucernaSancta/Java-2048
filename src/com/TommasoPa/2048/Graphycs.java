@@ -63,7 +63,8 @@ public class Graphycs extends Frame {
         }
     }
 
-    public static int KeyPressed(KeyEvent e) {
+    @Override
+    public int KeyPressed(KeyEvent e) {
         int key = e.getKeyCode();
 
         switch (key) {
